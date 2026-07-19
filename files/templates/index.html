@@ -20,11 +20,11 @@
 
         <main>
 
-            <form>
+            <form action="/uploads" method="POST" enctype="multipart/form-data">
 
                 <label>
                     <span class="file_label">Wybierz plik CSV</span>
-                    <input class="input_file" type="file" placeholder="plik.csv" required>
+                    <input class="input_file" type="file" placeholder="plik.csv" name="file" required>
                 </label>
 
                 <input class="input_submit" type="submit" value="Rozpocznij analizę">

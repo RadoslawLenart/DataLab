@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9aa9ede7-bd4d-40f4-8bbe-3800166866ac" name="Changes" comment="Initial project structure">
-      <change afterPath="$PROJECT_DIR$/files/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Data_Analyst.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DataLab.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="9aa9ede7-bd4d-40f4-8bbe-3800166866ac" name="Changes" comment="Create DataLab frontend layout">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/files/templates/dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/files/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -229,11 +227,20 @@
       <option name="project" value="LOCAL" />
       <updated>1784454996021</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Create DataLab frontend layout">
+      <option name="closed" value="true" />
+      <created>1784462985619</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1784462985619</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial project structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial project structure" />
+    <MESSAGE value="Create DataLab frontend layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create DataLab frontend layout" />
   </component>
 </project>
