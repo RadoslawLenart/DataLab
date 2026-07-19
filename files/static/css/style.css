@@ -1,0 +1,113 @@
+body
+    {
+
+        background-color: #f8fafc;
+        font-family: Inter, Arial, sans-serif;
+
+    }
+.container
+    {
+
+        background-color: white;
+        width: 500px;
+        margin: 100px auto;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+
+    }
+.subtitle
+    {
+
+        color: #1e293b;
+        text-align: center;
+
+    }
+.file_label
+    {
+
+        color: #1e293b;
+        text-align: center;
+
+    }
+.title
+    {
+
+        color: #1e293b;
+        text-align: center;
+
+    }
+.info_text
+    {
+
+        color: #64748b;
+        display: block;
+        text-align: center;
+        margin-bottom: 30px;
+
+    }
+.input_file
+    {
+
+        background-color: white;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        padding: 10px;
+        cursor:pointer;
+
+    }
+.input_file:focus
+    {
+
+        border-color: #2563eb;
+
+    }
+.input_submit
+    {
+
+        background-color: #2563eb;
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        width: 200px;
+        align-self: center;
+
+    }
+.input_submit:hover
+    {
+
+        background-color: #1d4ed8;
+
+    }
+h1
+    {
+
+        font-size: 250%;
+        margin-bottom: 20px;
+
+    }
+form
+    {
+
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+    }
+.footer
+    {
+        margin-top: 40px;
+        color: #64748b;
+        font-size: 14px;
+    }
+header
+    {
+
+        margin-bottom: 30px;
+
+    }

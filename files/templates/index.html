@@ -1,10 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl-PL">
 <head>
+
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>DataLab</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
 </head>
 <body>
+
+    <div class="container">
+
+        <header>
+
+            <h1 class="title">DataLab</h1>
+            <span class="subtitle">Narzędzie do automatycznej analizy i wizualizacji danych w formacie CSV.</span>
+
+        </header>
+
+        <main>
+
+            <form>
+
+                <label>
+                    <span class="file_label">Wybierz plik CSV</span>
+                    <input class="input_file" type="file" placeholder="plik.csv" required>
+                </label>
+
+                <input class="input_submit" type="submit" value="Rozpocznij analizę">
+
+            </form>
+        </main>
+
+        <footer class="footer">
+
+            <span class="info_text">DataLab | Radosław Lenart | 2026</span>
+
+        </footer>
+
+    </div>
 
 </body>
 </html>
