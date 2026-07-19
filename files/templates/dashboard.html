@@ -1,12 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl-PL">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard_style.css') }}">
 </head>
 <body>
+    <div class="container">
 
-    <h1>Test</h1>
+        <header>
 
+            <h1 class="title">Raport analizy</h1>
+            <h2 class="subtitle">{{ananyst.Nazwa_pliku}}</h2>
+
+        </header>
+        <main>
+
+            <div class="card">
+                <h4>Podstawowe wartości</h4>
+                <p>Ilość_wierszy: {{ananyst.Ilość_wierszy}}</p>
+                <p>ilość_kolumn: {{ananyst.ilość_kolumn}}</p>
+                <p>Kolumny: {{ananyst.Kolumny}}</p>
+            </div>
+            <div class="card">
+            <p>Brakujące_dane: {{ananyst.Brakujące_dane}}</p>
+            <p>Duplikaty: {{ananyst.Duplikaty}}</p>
+            </div>
+            <div class="card">
+            <p>Analiza_statystyczna: {{ananyst.Analiza_statystyczna}}</p>
+            </div>
+            <div class="card">
+            <p>Status: {{ananyst.Status}}</p>
+            </div>
+
+        </main>
+
+    </div>
 </body>
 </html>

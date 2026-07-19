@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9aa9ede7-bd4d-40f4-8bbe-3800166866ac" name="Changes" comment="Add CSV upload functionality with Flask">
+    <list default="true" id="9aa9ede7-bd4d-40f4-8bbe-3800166866ac" name="Changes" comment="git commit -m &quot;Add basic CSV data analysis&quot;">
+      <change afterPath="$PROJECT_DIR$/files/static/css/dashboard_style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/files/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/files/templates/dashboard.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,13 +244,22 @@
       <option name="project" value="LOCAL" />
       <updated>1784465994465</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="git commit -m &quot;Add basic CSV data analysis&quot;">
+      <option name="closed" value="true" />
+      <created>1784469553435</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1784469553435</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial project structure" />
     <MESSAGE value="Create DataLab frontend layout" />
     <MESSAGE value="Add CSV upload functionality with Flask" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add CSV upload functionality with Flask" />
+    <MESSAGE value="git commit -m &quot;Add basic CSV data analysis&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="git commit -m &quot;Add basic CSV data analysis&quot;" />
   </component>
 </project>

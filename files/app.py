@@ -1,5 +1,3 @@
-from itertools import count
-
 from flask import Flask, render_template, request
 from pathlib import Path
 import pandas as pd
@@ -31,31 +29,34 @@ def upload():
 
     missing = df.isnull().sum().to_dict()
 
-    print(f'Nazwa pliku:\n{file.filename}')
-    print('Podstawowe informacje:')
-    print(f'Ilość wierszy: {info['ilość_wierszy']}')
-    print(f'ilość_kolumn: {info['ilość_kolumn']}')
-    print('Kolumny:')
+    columns = []
     for column in info['kolumny']:
-        print(column)
-    print()
-    print('Brakujące dane:')
-    for column in missing.items():
-        print(f'{column[0]}: {column[1]}')
-    print()
-    print('Status:')
+        columns.append(column)
+
     counter = 0
+    status = None
     for column in missing.values():
         if column == 0:
             counter += 1
-            if counter == info['ilość_wierszy'] + 1:
-                print('Poprawny')
+            if counter == (info['ilość_wierszy'] + 1) and df.duplicated().sum() == 0:
+                status = 'Poprawny'
         else:
-            print('Niepoprawny')
+            status = 'Niepoprawny'
             break
 
+    ananyst = {
+        'Nazwa_pliku': file.filename,
+        'Ilość_wierszy': {info['ilość_wierszy']},
+        'ilość_kolumn': {info['ilość_kolumn']},
+        'Kolumny': columns,
+        'Brakujące_dane': missing,
+        'Duplikaty': df.duplicated().sum(),
+        'Analiza_statystyczna': df.describe(),
+        'Status': status
+    }
 
-    return render_template('dashboard.html')
+
+    return render_template('dashboard.html', ananyst=ananyst)
 
 
 if __name__ == '__main__':
