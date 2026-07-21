@@ -1,11 +1,10 @@
 import matplotlib.pyplot as plt
-import pandas as pd
 
 def plot(df, columns):
     charts = []
     counter = 0
     for column in columns:
-        if df[column].dtype == 'int64':
+        if df[column].dtype == 'int64' or df[column].dtype == 'float64':
             data = df[column]
 
             plt.figure()

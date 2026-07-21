@@ -18,19 +18,27 @@
 
             <div class="card">
                 <h4>Podstawowe wartości</h4>
-                <p>Ilość_wierszy: {{analyst.Ilość_wierszy}}</p>
+                <p>ilość_wierszy: {{analyst.ilość_wierszy}}</p>
                 <p>ilość_kolumn: {{analyst.ilość_kolumn}}</p>
                 <p>Kolumny: {{analyst.Kolumny}}</p>
             </div>
             <div class="card">
-            <p>Brakujące_dane: {{analyst.Brakujące_dane}}</p>
-            <p>Duplikaty: {{analyst.Duplikaty}}</p>
+                <p>Brakujące_dane: {{analyst.Brakujące_dane}}</p>
+                <p>Duplikaty: {{analyst.Duplikaty}}</p>
             </div>
             <div class="card">
-            <p>Analiza_statystyczna: {{analyst.Analiza_statystyczna}}</p>
+                <p>Analiza_statystyczna: {{analyst.Analiza_statystyczna}}</p>
             </div>
             <div class="card">
-            <p>Status: {{analyst.Status}}</p>
+                <p>Status: {{analyst.Status}}</p>
+                {% if analyst.Status == "Niepoprawny" %}
+
+                    <span>Chcesz naprawić dane? </span>
+                    <form action="/clean" method="POST">
+                        <input class="input_submit" type="submit" value="Tak">
+                    </form>
+
+                {% endif %}
             </div>
 
             <h1>Wykresy:</h1>
@@ -43,7 +51,6 @@
                 </div>
             {% endfor %}
         </main>
-
 
     </div>
 </body>

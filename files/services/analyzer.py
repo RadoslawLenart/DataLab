@@ -1,4 +1,3 @@
-
 def analyzer(UPLOAD_FOLDER, file, df):
     analyst = {
         'ilość_wierszy': df.shape[0],
