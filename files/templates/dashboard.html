@@ -11,29 +11,39 @@
         <header>
 
             <h1 class="title">Raport analizy</h1>
-            <h2 class="subtitle">{{ananyst.Nazwa_pliku}}</h2>
+            <h2 class="subtitle">{{analyst.Nazwa_pliku}}</h2>
 
         </header>
         <main>
 
             <div class="card">
                 <h4>Podstawowe wartości</h4>
-                <p>Ilość_wierszy: {{ananyst.Ilość_wierszy}}</p>
-                <p>ilość_kolumn: {{ananyst.ilość_kolumn}}</p>
-                <p>Kolumny: {{ananyst.Kolumny}}</p>
+                <p>Ilość_wierszy: {{analyst.Ilość_wierszy}}</p>
+                <p>ilość_kolumn: {{analyst.ilość_kolumn}}</p>
+                <p>Kolumny: {{analyst.Kolumny}}</p>
             </div>
             <div class="card">
-            <p>Brakujące_dane: {{ananyst.Brakujące_dane}}</p>
-            <p>Duplikaty: {{ananyst.Duplikaty}}</p>
+            <p>Brakujące_dane: {{analyst.Brakujące_dane}}</p>
+            <p>Duplikaty: {{analyst.Duplikaty}}</p>
             </div>
             <div class="card">
-            <p>Analiza_statystyczna: {{ananyst.Analiza_statystyczna}}</p>
+            <p>Analiza_statystyczna: {{analyst.Analiza_statystyczna}}</p>
             </div>
             <div class="card">
-            <p>Status: {{ananyst.Status}}</p>
+            <p>Status: {{analyst.Status}}</p>
             </div>
 
+            <h1>Wykresy:</h1>
+            {% for chart in charts %}
+                <div class="card">
+
+                    <h4>Wykres nr. {{ loop.index }}</h4>
+                    <img src="{{ url_for('static', filename=chart) }}" alt="Wykres">
+
+                </div>
+            {% endfor %}
         </main>
+
 
     </div>
 </body>

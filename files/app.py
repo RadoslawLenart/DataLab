@@ -2,6 +2,11 @@ from flask import Flask, render_template, request
 from pathlib import Path
 import pandas as pd
 
+import matplotlib
+matplotlib.use("Agg")
+
+from charts.plot_generator import plot
+
 app = Flask(__name__)
 
 UPLOAD_FOLDER = Path('./uploads')
@@ -27,36 +32,38 @@ def upload():
         'kolumny': list(df.columns)
     }
 
-    missing = df.isnull().sum().to_dict()
-
     columns = []
     for column in info['kolumny']:
         columns.append(column)
 
-    counter = 0
+    missing = df.isnull().sum().to_dict()
+    counter = 1
     status = None
     for column in missing.values():
         if column == 0:
             counter += 1
-            if counter == (info['ilość_wierszy'] + 1) and df.duplicated().sum() == 0:
+            if counter == (info['ilość_kolumn']) and df.duplicated().sum() == 0:
                 status = 'Poprawny'
         else:
             status = 'Niepoprawny'
             break
 
-    ananyst = {
+    charts = plot(df, columns)
+
+
+    analyst = {
         'Nazwa_pliku': file.filename,
-        'Ilość_wierszy': {info['ilość_wierszy']},
-        'ilość_kolumn': {info['ilość_kolumn']},
+        'Ilość_wierszy': info['ilość_wierszy'],
+        'ilość_kolumn': info['ilość_kolumn'],
         'Kolumny': columns,
         'Brakujące_dane': missing,
         'Duplikaty': df.duplicated().sum(),
         'Analiza_statystyczna': df.describe(),
-        'Status': status
+        'Status': status,
     }
 
 
-    return render_template('dashboard.html', ananyst=ananyst)
+    return render_template('dashboard.html', analyst=analyst, charts=charts)
 
 
 if __name__ == '__main__':
