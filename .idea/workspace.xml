@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9aa9ede7-bd4d-40f4-8bbe-3800166866ac" name="Changes" comment="Create analysis dashboard and display results">
+    <list default="true" id="9aa9ede7-bd4d-40f4-8bbe-3800166866ac" name="Changes" comment="Add data visualization charts">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/charts/plot_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/charts/plot_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/files/templates/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/services/analyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/services/analyzer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/services/csv_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/services/csv_loader.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,26 +37,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.app.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/Desktop/Python/Kurs/Data_Analyst/files/static/css&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.analyzer.executor": "Run",
+    "Python.app.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/HP/Desktop/Python/Kurs/Data_Analyst/files/static/css"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;CSS&quot;,
-      &quot;Markdown&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "CSS",
+      "Markdown"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\HP\Desktop\Python\Kurs\Data_Analyst\files\static\css" />
@@ -66,7 +67,30 @@
       <recent name="C:\Users\HP\Desktop\Python\Kurs\Data_Analyst\files" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.app">
+    <configuration name="analyzer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DataLab" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/files/services" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/files/services/analyzer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DataLab" />
       <option name="ENV_FILES" value="" />
@@ -93,6 +117,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.app" />
+        <item itemvalue="Python.analyzer" />
       </list>
     </recent_temporary>
   </component>
@@ -151,7 +176,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784473670279</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add data visualization charts">
+      <option name="closed" value="true" />
+      <created>1784625377147</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1784625377147</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -160,6 +193,7 @@
     <MESSAGE value="Add CSV upload functionality with Flask" />
     <MESSAGE value="git commit -m &quot;Add basic CSV data analysis&quot;" />
     <MESSAGE value="Create analysis dashboard and display results" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create analysis dashboard and display results" />
+    <MESSAGE value="Add data visualization charts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add data visualization charts" />
   </component>
 </project>
