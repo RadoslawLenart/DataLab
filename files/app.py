@@ -16,6 +16,10 @@ folder = Path('uploads')
 for file in folder.iterdir():
     if file.is_file():
         file.unlink()
+folder = Path('static/images')
+for file in folder.iterdir():
+    if file.is_file():
+        file.unlink()
 
 app = Flask(__name__)
 
@@ -34,7 +38,10 @@ def upload():
     global file
     global df
     UPLOAD_FOLDER = folder()
-    file, df = csv_loader(UPLOAD_FOLDER)
+    df, file = csv_loader(UPLOAD_FOLDER)
+
+    if df is None:
+        return render_template('error.html', error=file)
 
     analyst, columns = analyzer(
         UPLOAD_FOLDER,
