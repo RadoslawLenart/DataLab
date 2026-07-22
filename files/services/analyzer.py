@@ -26,7 +26,6 @@ def analyzer(UPLOAD_FOLDER, file, df):
         'Kolumny': columns,
         'Brakujące_dane': missing,
         'Duplikaty': df.duplicated().sum(),
-        'Analiza_statystyczna': df.describe(),
         'Status': status,
     })
     return analyst, columns

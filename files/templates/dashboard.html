@@ -27,7 +27,14 @@
                 <p>Duplikaty: {{analyst.Duplikaty}}</p>
             </div>
             <div class="card">
-                <p>Analiza_statystyczna: {{analyst.Analiza_statystyczna}}</p>
+                {% for statistic, columns in describe.items() %}
+
+                    <h3>{{ statistic }}</h3>
+                    {% for column, value in columns.items() %}
+                        <p>{{ column }}: {{ value }}</p>
+                    {% endfor %}
+
+                {% endfor %}
             </div>
             <div class="card">
                 <p>Status: {{analyst.Status}}</p>

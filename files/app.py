@@ -10,6 +10,12 @@ from charts.plot_generator import plot
 from services.csv_loader import csv_loader
 from services.analyzer import analyzer
 from services.cleaner import cleaner
+from services.statistics import statistics
+
+folder = Path('uploads')
+for file in folder.iterdir():
+    if file.is_file():
+        file.unlink()
 
 app = Flask(__name__)
 
@@ -36,11 +42,13 @@ def upload():
         df
     )
     charts = plot(df, columns)
+    describe = statistics(df)
 
     return render_template(
         'dashboard.html',
         analyst=analyst,
-        charts=charts
+        charts=charts,
+        describe=describe
     )
 
 
@@ -66,11 +74,13 @@ def clean():
         df
     )
     charts = plot(df, columns)
+    describe = statistics(df)
 
     return render_template(
         'dashboard.html',
         analyst=analyst,
-        charts=charts
+        charts=charts,
+        describe=describe
     )
 
 
