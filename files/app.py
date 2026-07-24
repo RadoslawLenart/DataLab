@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_file
 from pathlib import Path
 import pandas as pd
 from charset_normalizer import from_path
@@ -11,6 +11,7 @@ from services.csv_loader import csv_loader
 from services.analyzer import analyzer
 from services.cleaner import cleaner
 from services.statistics import statistics
+from services.pdf_generator import pdf_generator
 
 folder = Path('uploads')
 for file in folder.iterdir():
@@ -61,6 +62,10 @@ def upload():
 
 @app.route('/clean', methods=['GET', 'POST'])
 def clean():
+    global analyst
+    global charts
+    global describe
+
     UPLOAD_FOLDER = folder()
     file_path = UPLOAD_FOLDER / file.filename
 
@@ -71,7 +76,7 @@ def clean():
     else:
         encoding = "utf-8"
 
-    df = pd.read_csv(file_path, sep='[;,]', engine='python', encoding=encoding)
+    df = pd.read_csv(file_path, sep=None, engine='python', encoding=encoding)
 
     df = cleaner(df)
 
@@ -89,6 +94,16 @@ def clean():
         charts=charts,
         describe=describe
     )
+@app.route('/dowload', methods=['GET', 'POST'])
+def download():
+
+
+    pdf_generator(analyst, charts, describe)
+
+    pdf_folder = Path('static/reports')
+    pdf_path = pdf_folder / 'raport.pdf'
+
+    return send_file(pdf_path, as_attachment=True)
 
 
 if __name__ == '__main__':

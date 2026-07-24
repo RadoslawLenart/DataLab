@@ -15,6 +15,6 @@ def plot(df, columns):
             plt.savefig(f"static/images/Wykres{counter}.png")
             plt.close()
 
-            path_for_flask = f"images/Wykres{counter}.png"
+            path_for_flask = f"static/images/Wykres{counter}.png"
             charts.append(path_for_flask)
     return charts
