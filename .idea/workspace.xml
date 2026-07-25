@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9aa9ede7-bd4d-40f4-8bbe-3800166866ac" name="Changes" comment="Implement CSV validation and error handling">
-      <change afterPath="$PROJECT_DIR$/files/services/pdf_generator.py" afterDir="false" />
+    <list default="true" id="9aa9ede7-bd4d-40f4-8bbe-3800166866ac" name="Changes" comment="Add PDF report generation and download">
+      <change afterPath="$PROJECT_DIR$/files/services/fonts/DejaVuSans.ttf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/charts/plot_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/charts/plot_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/services/pdf_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/services/pdf_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/services/statistics.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/services/statistics.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/files/templates/dashboard.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +54,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/HP/Desktop/Python/Kurs/Data_Analyst/files/static/css"
+    "last_opened_file_path": "C:/Users/HP/Desktop/Python/Kurs/Data_Analyst/files/services/fonts"
   },
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
@@ -65,6 +65,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\HP\Desktop\Python\Kurs\Data_Analyst\files\services\fonts" />
       <recent name="C:\Users\HP\Desktop\Python\Kurs\Data_Analyst\files\static\css" />
       <recent name="C:\Users\HP\Desktop\Python\Kurs\Data_Analyst\files" />
     </key>
@@ -294,7 +295,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784730850263</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Add PDF report generation and download">
+      <option name="closed" value="true" />
+      <created>1784909786278</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1784909786278</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -308,6 +317,7 @@
     <MESSAGE value="Add data cleaning functionality" />
     <MESSAGE value="Add descriptive statistics analysis" />
     <MESSAGE value="Implement CSV validation and error handling" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement CSV validation and error handling" />
+    <MESSAGE value="Add PDF report generation and download" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add PDF report generation and download" />
   </component>
 </project>

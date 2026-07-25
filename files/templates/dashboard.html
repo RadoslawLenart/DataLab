@@ -17,16 +17,31 @@
         <main>
 
             <div class="card">
+
                 <h4>Podstawowe wartości</h4>
                 <p>ilość_wierszy: {{analyst.ilość_wierszy}}</p>
                 <p>ilość_kolumn: {{analyst.ilość_kolumn}}</p>
-                <p>Kolumny: {{analyst.Kolumny}}</p>
+
+                <p>Kolumny:
+                    {% for column in analyst.Kolumny %}
+
+                        {{column}},
+
+                    {% endfor %}
+                </p>
+
             </div>
             <div class="card">
-                <p>Brakujące_dane: {{analyst.Brakujące_dane}}</p>
+                <h4>Możliwe błędy</h4>
+                <p>Brakujące_dane:
+                    {% for x, y in analyst.Brakujące_dane.items() %}
+                        {{ x }}: {{ y }},
+                    {% endfor %}
+                </p>
                 <p>Duplikaty: {{analyst.Duplikaty}}</p>
             </div>
             <div class="card">
+                <h4>Statystyki opisowe</h4>
                 {% for statistic, columns in describe.items() %}
 
                     <h3>{{ statistic }}</h3>
@@ -37,9 +52,14 @@
                 {% endfor %}
             </div>
             <div class="card">
-                <p>Status: {{analyst.Status}}</p>
+                {% if analyst.Status == "Poprawny" %}
+
+                    <p style="color: green;">Status: {{ analyst.Status }}</p>
+
+                {% endif %}
                 {% if analyst.Status == "Niepoprawny" %}
 
+                    <p style="color: red;">Status: {{ analyst.Status }}</p>
                     <span>Chcesz naprawić dane? </span>
                     <form action="/clean" method="POST">
                         <input class="input_submit" type="submit" value="Tak">
