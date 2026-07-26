@@ -16,6 +16,7 @@
         </header>
         <main>
 
+        <div class="file-overview">
             <div class="card">
 
                 <h4>Podstawowe wartości</h4>
@@ -25,7 +26,7 @@
                 <p>Kolumny:
                     {% for column in analyst.Kolumny %}
 
-                        {{column}},
+                        {{column}}
 
                     {% endfor %}
                 </p>
@@ -35,11 +36,12 @@
                 <h4>Możliwe błędy</h4>
                 <p>Brakujące_dane:
                     {% for x, y in analyst.Brakujące_dane.items() %}
-                        {{ x }}: {{ y }},
+                        {{ x }}: {{ y }}
                     {% endfor %}
                 </p>
                 <p>Duplikaty: {{analyst.Duplikaty}}</p>
             </div>
+        </div>
             <div class="card">
                 <h4>Statystyki opisowe</h4>
                 {% for statistic, columns in describe.items() %}
@@ -50,22 +52,6 @@
                     {% endfor %}
 
                 {% endfor %}
-            </div>
-            <div class="card">
-                {% if analyst.Status == "Poprawny" %}
-
-                    <p style="color: green;">Status: {{ analyst.Status }}</p>
-
-                {% endif %}
-                {% if analyst.Status == "Niepoprawny" %}
-
-                    <p style="color: red;">Status: {{ analyst.Status }}</p>
-                    <span>Chcesz naprawić dane? </span>
-                    <form action="/clean" method="POST">
-                        <input class="input_submit" type="submit" value="Tak">
-                    </form>
-
-                {% endif %}
             </div>
 
             <h1>Wykresy:</h1>
@@ -78,16 +64,35 @@
                 </div>
             {% endfor %}
 
-            <div class="card">
-                {% if analyst.Status == "Poprawny" %}
+            <div class="dashboard-actions">
+                <div class="card">
+                    {% if analyst.Status == "Poprawny" %}
 
-                    <span>Chcesz pobrać plik PDF? </span>
-                    <form action="/download" method="POST">
-                        <input class="input_submit" type="submit" value="Tak">
-                    </form>
+                        <p style="color: green;">Status: {{ analyst.Status }}</p>
 
-                {% endif %}
+                    {% endif %}
+                    {% if analyst.Status == "Niepoprawny" %}
+
+                        <p style="color: red;">Status: {{ analyst.Status }}</p>
+                        <span>Chcesz naprawić dane? </span>
+                        <form action="/clean" method="POST">
+                            <input class="input_submit" type="submit" value="Tak">
+                        </form>
+
+                    {% endif %}
+                </div>
+                <div class="card">
+                    {% if analyst.Status == "Poprawny" %}
+
+                        <span>Chcesz pobrać plik PDF? </span>
+                        <form action="/download" method="POST">
+                            <input class="input_submit" type="submit" value="Tak">
+                        </form>
+
+                    {% endif %}
+                </div>
             </div>
+
         </main>
 
     </div>

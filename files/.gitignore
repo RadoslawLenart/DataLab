@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+
+# Generated files
+uploads/
+static/images/
+static/reports/

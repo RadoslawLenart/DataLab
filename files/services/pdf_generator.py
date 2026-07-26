@@ -27,8 +27,8 @@ def pdf_generator(analyst, charts, describe):
 
     elements.append(Paragraph("Raport analizy danych", styles["Heading1"]))
     elements.append(Paragraph(f"Nazwa pliku: {analyst['Nazwa_pliku']}", styles["Normal"]))
-    elements.append(Paragraph(f"Liczba wierszy: {analyst['ilość_wierszy']}", styles["Normal"]))
-    elements.append(Paragraph(f"Liczba kolumn: {analyst['ilość_kolumn']}", styles["Normal"]))
+    elements.append(Paragraph(f"Liczba wierszy: {analyst['Ilość_wierszy']}", styles["Normal"]))
+    elements.append(Paragraph(f"Liczba kolumn: {analyst['Ilość_kolumn']}", styles["Normal"]))
     elements.append(Paragraph(f"Kolumny: {analyst['Kolumny']}", styles["Normal"]))
     elements.append(Spacer(1, 15))
 
