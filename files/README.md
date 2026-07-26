@@ -1,73 +1,59 @@
-# 📊 DataLab
+# DataLab
 
-DataLab to aplikacja webowa napisana w Pythonie z wykorzystaniem frameworka Flask, która umożliwia analizę, czyszczenie oraz wizualizację danych zapisanych w plikach CSV.
-
-Projekt pozwala użytkownikowi szybko sprawdzić jakość danych, wykryć potencjalne problemy oraz wygenerować raport zawierający wyniki analizy.
-
-🔗 **Repozytorium GitHub:**  
-https://github.com/RadoslawLenart/DataLab
+DataLab to aplikacja webowa napisana w Pythonie z wykorzystaniem frameworka Flask, umożliwiająca analizę, czyszczenie oraz wizualizację danych zapisanych w plikach CSV. Projekt został stworzony jako element portfolio, prezentujący praktyczne umiejętności w zakresie analizy danych oraz tworzenia aplikacji webowych.
 
 ---
 
-## 🎯 Cel projektu
+## Cel projektu
 
-DataLab został stworzony jako projekt portfolio rozwijający umiejętności w zakresie:
+Celem projektu jest rozwój kompetencji w obszarach:
 
-- języka Python
-- analizy danych z wykorzystaniem biblioteki Pandas
-- tworzenia aplikacji webowych Flask
-- wizualizacji danych
-- generowania raportów PDF
-
----
-
-# 🚀 Funkcje
-
-## 📂 Obsługa plików CSV
-
-- przesyłanie plików CSV
-- automatyczne wykrywanie kodowania pliku
-- obsługa różnych formatów plików CSV
-- sprawdzanie poprawności danych wejściowych
-- obsługa błędów (np. pusty plik, niepoprawny format)
+- programowania w języku Python,
+- analizy i przetwarzania danych z wykorzystaniem biblioteki **Pandas**,
+- budowy aplikacji webowych opartych o **Flask**,
+- wizualizacji danych z użyciem **Matplotlib**,
+- generowania raportów PDF,
+- projektowania struktury aplikacji oraz organizacji kodu.
 
 ---
 
-## 📊 Analiza danych
+## Funkcjonalności
 
-Aplikacja automatycznie analizuje przesłany plik i wyświetla:
+### Obsługa plików CSV
 
-- nazwę pliku
-- liczbę wierszy
-- liczbę kolumn
-- nazwy kolumn
-- brakujące wartości
-- liczbę duplikatów
-- podstawowe statystyki opisowe
+- przesyłanie plików CSV przez interfejs webowy,
+- automatyczne wykrywanie kodowania pliku,
+- obsługa różnych formatów CSV,
+- walidacja poprawności danych wejściowych,
+- obsługa błędów (np. pusty plik, niepoprawny format).
 
----
+### Analiza danych
 
-## 📈 Wizualizacja danych
+Aplikacja generuje podstawowy raport dotyczący struktury danych:
 
-DataLab automatycznie generuje wykresy dla danych numerycznych:
+- nazwa pliku,
+- liczba wierszy i kolumn,
+- nazwy kolumn,
+- liczba brakujących wartości,
+- liczba duplikatów,
+- statystyki opisowe dla danych liczbowych.
 
-- histogramy kolumn typu `int` oraz `float`
-- zapis wykresów do aplikacji
-- prezentacja wykresów w dashboardzie
+### Wizualizacja danych
 
----
+- automatyczne tworzenie histogramów dla kolumn typu `int` oraz `float`,
+- zapisywanie wykresów w aplikacji,
+- prezentacja wyników w dashboardzie.
 
-## 🧹 Czyszczenie danych
+### Czyszczenie danych
 
-Aplikacja umożliwia przygotowanie danych poprzez:
+Możliwość przygotowania danych poprzez:
 
-- usuwanie duplikatów
-- usuwanie rekordów zawierających brakujące wartości
-- poprawianie nazw kolumn:
-
-  - zamiana liter na małe
-  - usuwanie zbędnych spacji
-  - zamiana spacji na znak `_`
+- usuwanie duplikatów,
+- usuwanie rekordów zawierających brakujące wartości,
+- normalizację nazw kolumn:
+  - zamiana liter na małe,
+  - usuwanie zbędnych spacji,
+  - zamiana spacji na znak `_`.
 
 Przykład:
 
@@ -75,46 +61,41 @@ Przykład:
 First Name → first_name
 ```
 
----
+### Raport PDF
 
-## 📄 Raport PDF
+Generowanie raportu zawierającego:
 
-Po poprawnej analizie danych użytkownik może wygenerować raport PDF zawierający:
+- informacje o pliku,
+- wyniki analizy,
+- statystyki opisowe,
+- informacje o jakości danych.
 
-- informacje o pliku
-- wyniki analizy
-- statystyki opisowe
-- informacje o jakości danych
-
----
-
-## 📥 Eksport danych
+### Eksport danych
 
 Możliwość pobrania:
 
-- oczyszczonego pliku CSV
-- raportu PDF
+- oczyszczonego pliku CSV,
+- wygenerowanego raportu PDF.
 
 ---
 
-# 🛠 Technologie
+## Technologie
 
 | Technologia | Zastosowanie |
 |-------------|--------------|
-| Python | główny język projektu |
-| Flask | aplikacja webowa |
+| Python | logika aplikacji |
+| Flask | backend webowy |
 | Pandas | analiza i przetwarzanie danych |
 | Matplotlib | generowanie wykresów |
 | ReportLab | tworzenie raportów PDF |
-| HTML | struktura strony |
-| CSS | wygląd interfejsu |
-| Jinja2 | szablony Flask |
+| HTML / CSS | interfejs użytkownika |
+| Jinja2 | szablony widoków |
 
 ---
 
-# 📁 Struktura projektu
+## Struktura projektu
 
-```
+```text
 DataLab/
 │
 ├── app.py
@@ -146,55 +127,38 @@ DataLab/
 
 ---
 
-# ⚙️ Instalacja
+## Instalacja i uruchomienie
 
-## 1. Sklonowanie repozytorium
+### 1. Klonowanie repozytorium
 
 ```bash
 git clone https://github.com/RadoslawLenart/DataLab.git
-```
-
-Przejście do folderu projektu:
-
-```bash
 cd DataLab
 ```
 
----
+### 2. Utworzenie środowiska wirtualnego
 
-## 2. Utworzenie środowiska wirtualnego
-
-Windows:
+**Windows**
 
 ```bash
 python -m venv .venv
-```
-
-Aktywacja:
-
-```bash
 .venv\Scripts\activate
 ```
 
-Linux / macOS:
+**Linux / macOS**
 
 ```bash
 python3 -m venv .venv
-
 source .venv/bin/activate
 ```
 
----
-
-## 3. Instalacja bibliotek
+### 3. Instalacja zależności
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
-## 4. Uruchomienie aplikacji
+### 4. Uruchomienie aplikacji
 
 ```bash
 python app.py
@@ -202,74 +166,26 @@ python app.py
 
 Aplikacja będzie dostępna pod adresem:
 
-```
+```text
 http://127.0.0.1:5000
 ```
 
 ---
 
-# 🔄 Jak działa aplikacja?
+## Planowany rozwój
 
-1. Użytkownik przesyła plik CSV.
-2. DataLab analizuje strukturę danych.
-3. Tworzony jest dashboard z wynikami.
-4. Generowane są wykresy dla danych liczbowych.
-5. Użytkownik może:
-   - sprawdzić jakość danych,
-   - oczyścić plik,
-   - pobrać poprawiony CSV,
-   - wygenerować raport PDF.
+Projekt znajduje się w pierwszej wersji i będzie rozwijany. Planowane funkcje:
 
----
-
-# 📸 Screenshots
-
-*(Dodaj tutaj zrzuty ekranu aplikacji)*
-
-Przykładowa struktura:
-
-```
-docs/
-├── home.png
-├── dashboard.png
-└── report.png
-```
-
-### Strona główna
-
-![Home](docs/home.png)
-
-### Dashboard
-
-![Dashboard](docs/dashboard.png)
-
-### Raport PDF
-
-![Report](docs/report.png)
+- dodatkowe typy wykresów,
+- eksport danych do Excela,
+- możliwość wyboru sposobu czyszczenia danych,
+- historia analiz,
+- rozbudowany system raportów,
+- ulepszenia interfejsu użytkownika.
 
 ---
 
-# 🔮 Planowany rozwój
+## Autor
 
-Możliwe dalsze funkcje:
-
-- więcej typów wykresów
-- eksport danych do Excela
-- możliwość wyboru sposobu czyszczenia danych
-- historia analiz
-- zapis wyników użytkowników
-- rozbudowany system raportów
-- poprawa wyglądu interfejsu
-
----
-
-# 👤 Autor
-
-**Radosław Lenart**
-
-GitHub:  
-https://github.com/RadoslawLenart
-
----
-
-Projekt wykonany jako aplikacja portfolio rozwijająca praktyczne umiejętności programowania w Pythonie, analizy danych oraz tworzenia aplikacji webowych.
+**Radosław Lenart**  
+GitHub: https://github.com/RadoslawLenart
