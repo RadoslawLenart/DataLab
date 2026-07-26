@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9aa9ede7-bd4d-40f4-8bbe-3800166866ac" name="Changes" comment="docs: update README">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/files/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="9aa9ede7-bd4d-40f4-8bbe-3800166866ac" name="Changes" comment="update README" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -325,7 +322,15 @@
       <option name="project" value="LOCAL" />
       <updated>1785065702600</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="update README">
+      <option name="closed" value="true" />
+      <created>1785084137887</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1785084137887</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -343,6 +348,7 @@
     <MESSAGE value="refactor: improve dashboard styling and translate statistics" />
     <MESSAGE value="refactor: reorganize app.py and related modules" />
     <MESSAGE value="docs: update README" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs: update README" />
+    <MESSAGE value="update README" />
+    <option name="LAST_COMMIT_MESSAGE" value="update README" />
   </component>
 </project>
