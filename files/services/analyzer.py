@@ -1,12 +1,11 @@
 def analyzer(UPLOAD_FOLDER, file, df):
     analyst = {
-        'ilość_wierszy': df.shape[0],
-        'ilość_kolumn': df.shape[1],
-        'kolumny': list(df.columns)
+        'Ilość_wierszy': df.shape[0],
+        'Ilość_kolumn': df.shape[1],
     }
 
     columns = []
-    for column in analyst['kolumny']:
+    for column in list(df.columns):
         columns.append(column)
 
     missing = df.isnull().sum().to_dict()
@@ -15,7 +14,7 @@ def analyzer(UPLOAD_FOLDER, file, df):
     for column in missing.values():
         if column == 0:
             counter += 1
-            if counter == (analyst['ilość_kolumn']) and df.duplicated().sum() == 0:
+            if counter == (analyst['Ilość_kolumn']) and df.duplicated().sum() == 0:
                 status = 'Poprawny'
         else:
             status = 'Niepoprawny'

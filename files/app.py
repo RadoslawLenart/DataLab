@@ -1,11 +1,10 @@
 from flask import Flask, render_template, request, send_file
 from pathlib import Path
-import pandas as pd
-from charset_normalizer import from_path
 import matplotlib
 
 matplotlib.use("Agg")
 
+from config import UPLOAD_FOLDER
 from charts.plot_generator import plot
 from services.csv_loader import csv_loader
 from services.analyzer import analyzer
@@ -24,10 +23,18 @@ for file in folder.iterdir():
 
 app = Flask(__name__)
 
-def folder():
-    UPLOAD_FOLDER = Path('./uploads')
-    UPLOAD_FOLDER.mkdir(exist_ok=True)
-    return UPLOAD_FOLDER
+
+def generate_analysis(UPLOAD_FOLDER, file, df):
+    analyst, columns = analyzer(
+            UPLOAD_FOLDER,
+            file,
+            df
+        )
+    charts = plot(df, columns)
+    describe = statistics(df)
+
+    return analyst, charts, describe
+
 
 @app.route('/')
 def home():
@@ -36,21 +43,12 @@ def home():
 
 @app.route('/uploads', methods=['GET', 'POST'])
 def upload():
-    global file
-    global df
-    UPLOAD_FOLDER = folder()
-    df, file = csv_loader(UPLOAD_FOLDER)
 
+    df, file = csv_loader(UPLOAD_FOLDER, False)
     if df is None:
         return render_template('error.html', error=file)
 
-    analyst, columns = analyzer(
-        UPLOAD_FOLDER,
-        file,
-        df
-    )
-    charts = plot(df, columns)
-    describe = statistics(df)
+    analyst, charts, describe = generate_analysis(UPLOAD_FOLDER, file, df)
 
     return render_template(
         'dashboard.html',
@@ -60,33 +58,15 @@ def upload():
     )
 
 
-@app.route('/clean', methods=['GET', 'POST'])
+@app.route('/clean', methods=['POST'])
 def clean():
-    global analyst
-    global charts
-    global describe
 
-    UPLOAD_FOLDER = folder()
-    file_path = UPLOAD_FOLDER / file.filename
-
-    result = from_path(file_path).best()
-
-    if result:
-        encoding = result.encoding
-    else:
-        encoding = "utf-8"
-
-    df = pd.read_csv(file_path, sep=None, engine='python', encoding=encoding)
-
+    df, file = csv_loader(UPLOAD_FOLDER, True)
+    if df is None:
+        return render_template('error.html', error=file)
     df = cleaner(df)
 
-    analyst, columns = analyzer(
-        UPLOAD_FOLDER,
-        file,
-        df
-    )
-    charts = plot(df, columns)
-    describe = statistics(df)
+    analyst, charts, describe = generate_analysis(UPLOAD_FOLDER, file, df)
 
     return render_template(
         'dashboard.html',
@@ -94,9 +74,12 @@ def clean():
         charts=charts,
         describe=describe
     )
-@app.route('/dowload', methods=['GET', 'POST'])
+@app.route('/download', methods=['GET', 'POST'])
 def download():
-
+    df, file = csv_loader(UPLOAD_FOLDER, True)
+    if df is None:
+        return render_template('error.html', error=file)
+    analyst, charts, describe = generate_analysis(UPLOAD_FOLDER, file, df)
 
     pdf_generator(analyst, charts, describe)
 

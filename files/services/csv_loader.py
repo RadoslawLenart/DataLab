@@ -1,13 +1,27 @@
 import pandas as pd
 from flask import request
 from charset_normalizer import from_path
+from pathlib import Path
 
-def csv_loader(UPLOAD_FOLDER):
+from werkzeug.datastructures import FileStorage
+
+
+def csv_loader(UPLOAD_FOLDER, file_is_true):
     try:
-        file = request.files['file']
 
-        file_path = UPLOAD_FOLDER/file.filename
-        file.save(file_path)
+        if not file_is_true:
+            file = request.files["file"]
+            file_path = UPLOAD_FOLDER / file.filename
+            file.save(file_path)
+
+        else:
+            file_path = next(Path(UPLOAD_FOLDER).iterdir())
+
+            file = FileStorage(
+                stream=open(file_path, "rb"),
+                filename=file_path.name
+            )
+
 
         result = from_path(file_path).best()
         if result:

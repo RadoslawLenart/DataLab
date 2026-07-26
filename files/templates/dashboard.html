@@ -19,8 +19,8 @@
             <div class="card">
 
                 <h4>Podstawowe wartości</h4>
-                <p>ilość_wierszy: {{analyst.ilość_wierszy}}</p>
-                <p>ilość_kolumn: {{analyst.ilość_kolumn}}</p>
+                <p>Ilość_wierszy: {{analyst.Ilość_wierszy}}</p>
+                <p>Ilość_kolumn: {{analyst.Ilość_kolumn}}</p>
 
                 <p>Kolumny:
                     {% for column in analyst.Kolumny %}
@@ -82,7 +82,7 @@
                 {% if analyst.Status == "Poprawny" %}
 
                     <span>Chcesz pobrać plik PDF? </span>
-                    <form action="/dowload" method="POST">
+                    <form action="/download" method="POST">
                         <input class="input_submit" type="submit" value="Tak">
                     </form>
 
