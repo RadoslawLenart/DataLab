@@ -7,12 +7,6 @@
     <list default="true" id="9aa9ede7-bd4d-40f4-8bbe-3800166866ac" name="Changes" comment="refactor: reorganize app.py and related modules">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/files/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/database/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/database/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/services/pdf_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/services/pdf_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/static/css/dashboard_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/files/static/css/dashboard_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/files/templates/dashboard.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

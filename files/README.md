@@ -1,43 +1,118 @@
 # 📊 DataLab
 
-DataLab to aplikacja webowa napisana w Pythonie z wykorzystaniem Flaska, która umożliwia analizę, czyszczenie i wizualizację danych zapisanych w plikach CSV.
+DataLab to aplikacja webowa napisana w Pythonie z wykorzystaniem frameworka Flask, która umożliwia analizę, czyszczenie oraz wizualizację danych zapisanych w plikach CSV.
 
-Projekt został stworzony jako aplikacja do nauki Pythona, Pandas oraz tworzenia aplikacji webowych we Flasku.
+Projekt pozwala użytkownikowi szybko sprawdzić jakość danych, wykryć potencjalne problemy oraz wygenerować raport zawierający wyniki analizy.
 
----
-
-## Funkcje
-
-- Przesyłanie plików CSV
-- Automatyczne wykrywanie kodowania pliku
-- Analiza danych:
-  - liczba wierszy
-  - liczba kolumn
-  - nazwy kolumn
-  - brakujące dane
-  - duplikaty
-  - statystyki opisowe
-- Generowanie wykresów
-- Czyszczenie danych
-- Generowanie raportu PDF
-- Pobieranie poprawionego pliku CSV
-- Obsługa błędów (np. pusty plik, błędny format)
+🔗 **Repozytorium GitHub:**  
+https://github.com/RadoslawLenart/DataLab
 
 ---
 
-## Technologie
+## 🎯 Cel projektu
 
-- Python
-- Flask
-- Pandas
-- Matplotlib
-- ReportLab
-- HTML
-- CSS
+DataLab został stworzony jako projekt portfolio rozwijający umiejętności w zakresie:
+
+- języka Python
+- analizy danych z wykorzystaniem biblioteki Pandas
+- tworzenia aplikacji webowych Flask
+- wizualizacji danych
+- generowania raportów PDF
 
 ---
 
-## Struktura projektu
+# 🚀 Funkcje
+
+## 📂 Obsługa plików CSV
+
+- przesyłanie plików CSV
+- automatyczne wykrywanie kodowania pliku
+- obsługa różnych formatów plików CSV
+- sprawdzanie poprawności danych wejściowych
+- obsługa błędów (np. pusty plik, niepoprawny format)
+
+---
+
+## 📊 Analiza danych
+
+Aplikacja automatycznie analizuje przesłany plik i wyświetla:
+
+- nazwę pliku
+- liczbę wierszy
+- liczbę kolumn
+- nazwy kolumn
+- brakujące wartości
+- liczbę duplikatów
+- podstawowe statystyki opisowe
+
+---
+
+## 📈 Wizualizacja danych
+
+DataLab automatycznie generuje wykresy dla danych numerycznych:
+
+- histogramy kolumn typu `int` oraz `float`
+- zapis wykresów do aplikacji
+- prezentacja wykresów w dashboardzie
+
+---
+
+## 🧹 Czyszczenie danych
+
+Aplikacja umożliwia przygotowanie danych poprzez:
+
+- usuwanie duplikatów
+- usuwanie rekordów zawierających brakujące wartości
+- poprawianie nazw kolumn:
+
+  - zamiana liter na małe
+  - usuwanie zbędnych spacji
+  - zamiana spacji na znak `_`
+
+Przykład:
+
+```
+First Name → first_name
+```
+
+---
+
+## 📄 Raport PDF
+
+Po poprawnej analizie danych użytkownik może wygenerować raport PDF zawierający:
+
+- informacje o pliku
+- wyniki analizy
+- statystyki opisowe
+- informacje o jakości danych
+
+---
+
+## 📥 Eksport danych
+
+Możliwość pobrania:
+
+- oczyszczonego pliku CSV
+- raportu PDF
+
+---
+
+# 🛠 Technologie
+
+| Technologia | Zastosowanie |
+|-------------|--------------|
+| Python | główny język projektu |
+| Flask | aplikacja webowa |
+| Pandas | analiza i przetwarzanie danych |
+| Matplotlib | generowanie wykresów |
+| ReportLab | tworzenie raportów PDF |
+| HTML | struktura strony |
+| CSS | wygląd interfejsu |
+| Jinja2 | szablony Flask |
+
+---
+
+# 📁 Struktura projektu
 
 ```
 DataLab/
@@ -71,29 +146,31 @@ DataLab/
 
 ---
 
-## Instalacja
+# ⚙️ Instalacja
 
-Sklonuj repozytorium:
+## 1. Sklonowanie repozytorium
 
 ```bash
-git clone https://github.com/TWOJ_LOGIN/DataLab.git
+git clone https://github.com/RadoslawLenart/DataLab.git
 ```
 
-Przejdź do katalogu projektu:
+Przejście do folderu projektu:
 
 ```bash
 cd DataLab
 ```
 
-Utwórz środowisko wirtualne:
+---
+
+## 2. Utworzenie środowiska wirtualnego
+
+Windows:
 
 ```bash
 python -m venv .venv
 ```
 
-Aktywuj środowisko:
-
-Windows:
+Aktywacja:
 
 ```bash
 .venv\Scripts\activate
@@ -102,22 +179,28 @@ Windows:
 Linux / macOS:
 
 ```bash
+python3 -m venv .venv
+
 source .venv/bin/activate
 ```
 
-Zainstaluj wymagane biblioteki:
+---
+
+## 3. Instalacja bibliotek
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Uruchom aplikację:
+---
+
+## 4. Uruchomienie aplikacji
 
 ```bash
 python app.py
 ```
 
-Otwórz przeglądarkę:
+Aplikacja będzie dostępna pod adresem:
 
 ```
 http://127.0.0.1:5000
@@ -125,19 +208,25 @@ http://127.0.0.1:5000
 
 ---
 
-## Przykładowy przebieg
+# 🔄 Jak działa aplikacja?
 
-1. Wybierz plik CSV.
-2. Aplikacja analizuje dane.
-3. Wyświetlany jest dashboard z wynikami.
-4. W razie potrzeby wyczyść dane.
-5. Pobierz raport PDF lub poprawiony plik CSV.
+1. Użytkownik przesyła plik CSV.
+2. DataLab analizuje strukturę danych.
+3. Tworzony jest dashboard z wynikami.
+4. Generowane są wykresy dla danych liczbowych.
+5. Użytkownik może:
+   - sprawdzić jakość danych,
+   - oczyścić plik,
+   - pobrać poprawiony CSV,
+   - wygenerować raport PDF.
 
 ---
 
-## Przykładowe zrzuty ekranu
+# 📸 Screenshots
 
-Tutaj warto dodać kilka obrazów, np.
+*(Dodaj tutaj zrzuty ekranu aplikacji)*
+
+Przykładowa struktura:
 
 ```
 docs/
@@ -146,9 +235,6 @@ docs/
 └── report.png
 ```
 
-i w README:
-
-```md
 ### Strona główna
 
 ![Home](docs/home.png)
@@ -156,12 +242,34 @@ i w README:
 ### Dashboard
 
 ![Dashboard](docs/dashboard.png)
-```
+
+### Raport PDF
+
+![Report](docs/report.png)
 
 ---
 
-## Autor
+# 🔮 Planowany rozwój
 
-Radosław Lenart
+Możliwe dalsze funkcje:
 
-Projekt wykonany w celu nauki języka Python, biblioteki Pandas oraz frameworka Flask.
+- więcej typów wykresów
+- eksport danych do Excela
+- możliwość wyboru sposobu czyszczenia danych
+- historia analiz
+- zapis wyników użytkowników
+- rozbudowany system raportów
+- poprawa wyglądu interfejsu
+
+---
+
+# 👤 Autor
+
+**Radosław Lenart**
+
+GitHub:  
+https://github.com/RadoslawLenart
+
+---
+
+Projekt wykonany jako aplikacja portfolio rozwijająca praktyczne umiejętności programowania w Pythonie, analizy danych oraz tworzenia aplikacji webowych.
